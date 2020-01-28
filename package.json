@@ -1,0 +1,22 @@
+{
+  "name": "proyectolotery",
+  "version": "1.0.0",
+  "description": "ProyectoLotery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonaldHualpaOcas/ProyectoLotery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RonaldHualpaOcas/ProyectoLotery/issues"
+  },
+  "homepage": "https://github.com/RonaldHualpaOcas/ProyectoLotery#readme",
+  "dependencies": {
+    "angular": "^1.7.9"
+  }
+}
