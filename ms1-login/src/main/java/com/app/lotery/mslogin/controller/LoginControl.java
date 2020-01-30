@@ -24,13 +24,31 @@ public class LoginControl {
 	private DataRepository dataRepository;
 	
 	@PostMapping("/checkUsers/logon")
-	public void checkTypeUser(@Valid @RequestBody LoginData dataDetails) throws ResourceNotFoundException {
+	public void checkUserExistance(@Valid @RequestBody LoginData dataDetails) 
+			throws ResourceNotFoundException {
+		
+		List<LoginData> listaDatos = dataRepository.findAll();
+		int i = 0;
+		boolean encontrado = false;
+		while (encontrado == false) {
+			if(listaDatos.get(i).getEmail().toString().equalsIgnoreCase(dataDetails.getEmail().toString())
+			   && listaDatos.get(i).getPassword().toString().equalsIgnoreCase(dataDetails.getPassword().toString())) {
+				encontrado = true;
+			}
+			i++;
+		}
+		
+		if(encontrado == true) {
+			System.out.println("User exists");			
+		} else {
+			System.out.println("The user doesn't exist");
+		}
 		
 		if (dataDetails.getEmail().equalsIgnoreCase("admin@lotery.com") && dataDetails.getPassword().equalsIgnoreCase("admin")) {
 			System.out.println("correct admin Auth");
 			
 		} else {
-			System.out.println("User logged as: " + dataDetails.getName().toString() + " " + dataDetails.getLast_name().toString());
+			System.out.println("User logged as: " + dataDetails.getEmail().toString());
 		}
 	}
 	
