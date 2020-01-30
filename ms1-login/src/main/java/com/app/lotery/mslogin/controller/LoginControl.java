@@ -45,7 +45,7 @@ public class LoginControl {
 		}
 		
 		if (dataDetails.getEmail().equalsIgnoreCase("admin@lotery.com") && dataDetails.getPassword().equalsIgnoreCase("admin")) {
-			System.out.println("correct admin Auth");
+			System.out.println("Correct admin authentication");
 			
 		} else {
 			System.out.println("User logged as: " + dataDetails.getEmail().toString());
