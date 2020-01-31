@@ -7,10 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 @Table(name = "combo")
 
-public class Combo_Entity {
+public class Combo_Entity extends BaseEntity {
 	private long combo_id;
 	private int quantity_selected;
 	private int[] chosen_numbers;
@@ -39,7 +41,7 @@ public class Combo_Entity {
 	}
 	
 	
-	@Column(name = "quatity_selected", nullable = false)
+	@Column(name = "quantity_selected", nullable = false)
 	public int getQuantity_selected() {
 		return quantity_selected;
 	}
@@ -47,9 +49,9 @@ public class Combo_Entity {
 	public void setQuantity_selected(int quantity_selected) {
 		this.quantity_selected = quantity_selected;
 	}
-	
-	
-	@Column(name = "chosen_numbers", nullable = false)
+		
+	@Type(type = "int-array")
+	@Column(name = "chosen_numbers", nullable = false, columnDefinition = "integer[]")
 	public int[] getChosen_numbers() {
 		return chosen_numbers;
 	}
@@ -57,7 +59,6 @@ public class Combo_Entity {
 	public void setChosen_numbers(int[] chosen_numbers) {
 		this.chosen_numbers = chosen_numbers;
 	}
-	
 	
 	@Column(name = "mode", nullable = false)
 	public String getMode() {
