@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "player")
 
 public class LoginData {
-	private long id;
+	private long user_id;
 	private String name;
 	private String last_name;
 	private String email;
@@ -23,21 +23,29 @@ public class LoginData {
 		
 	}
 	
+	public LoginData(String email, String password) {
+        this.email = email;
+        this.password = password;
+   }
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        public long getId() {
-        return id;
-    }
+	public long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(long user_id) {
+		this.user_id = user_id;
+	}
 	
-	public void setId(long id) {
-        this.id = id;
-    }
 	
 	@Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
-    public void setName(String name) {
+    
+
+	public void setName(String name) {
         this.name = name;
     }
 
