@@ -4,9 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.app.lotery.msRegistroJugada.model.Play_Entity;
+import com.app.lotery.msRegistroJugada.model.Player_Entity;
 
 @Repository
-public interface PlayRepository extends JpaRepository<Play_Entity, Long>{
+public interface PlayerRepository extends JpaRepository<Player_Entity, Long>{
 
 }
