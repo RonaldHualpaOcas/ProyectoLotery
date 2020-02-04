@@ -17,13 +17,13 @@ import com.app.lotery.mslogin.repository.DataRepository;
 import com.app.lotery.mslogin.exception.ResourceNotFoundException;
 
 @RestController
-@RequestMapping("/LoteryLogin/v1")
+@RequestMapping("/Lotery/v1/CheckLogin")
 public class LoginControl {
 	
 	@Autowired
 	private DataRepository dataRepository;
 	
-	@PostMapping("/checkUsers/logon")
+	@PostMapping("/logon")
 	public void checkUserExistance(@Valid @RequestBody LoginData dataDetails) 
 			throws ResourceNotFoundException {
 		
@@ -45,7 +45,7 @@ public class LoginControl {
 		}
 		
 		if (dataDetails.getEmail().equalsIgnoreCase("admin@lotery.com") && dataDetails.getPassword().equalsIgnoreCase("admin")) {
-			System.out.println("correct admin Auth");
+			System.out.println("Correct admin authentication");
 			
 		} else {
 			System.out.println("User logged as: " + dataDetails.getEmail().toString());
