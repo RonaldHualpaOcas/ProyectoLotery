@@ -1,4 +1,4 @@
-package com.app.lotery.mslogin.model;
+package com.app.lotery.msConsultaJugada.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "player")
 
-public class LoginData {
+public class Player_Entity {
 	private long user_id;
 	private String name;
 	private String last_name;
@@ -19,11 +19,11 @@ public class LoginData {
 	private String telephone_number;
 	private String FK_role;
 	
-	public LoginData () {
+	public Player_Entity () {
 		
 	}
 	
-	public LoginData(String email, String password) {
+	public Player_Entity(String email, String password) {
         this.email = email;
         this.password = password;
    }
@@ -94,5 +94,4 @@ public class LoginData {
 	public void setFK_role(String fK_role) {
 		FK_role = fK_role;
 	}
-    
 }
