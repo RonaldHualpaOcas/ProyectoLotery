@@ -52,6 +52,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+       			 	<testFailureIgnore>true</testFailureIgnore>
+       			 	<useSystemClassLoader>false</useSystemClassLoader>
+   				</configuration>
 			</plugin>
 		</plugins>
 	</build>
