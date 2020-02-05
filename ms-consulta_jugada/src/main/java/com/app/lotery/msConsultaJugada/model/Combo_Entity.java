@@ -19,7 +19,7 @@ public class Combo_Entity extends BaseEntity {
 	private String mode;
 	
 	public Combo_Entity() {
-	
+		
 	}
 
 	public Combo_Entity(long combo_id, int quantity_selected, int[] chosen_numbers, String mode) {
@@ -29,7 +29,7 @@ public class Combo_Entity extends BaseEntity {
 		this.chosen_numbers = chosen_numbers;
 		this.mode = mode;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getCombo_id() {

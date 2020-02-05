@@ -1,6 +1,6 @@
 package com.app.lotery.msRegistroJugada.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name = "bill")
 public class Bill_Entity {
 	private long bill_id;
-	private Date date;
+	private LocalDate date;
 	private float total_amount;
 	private String bill_number;
 	
@@ -21,7 +21,7 @@ public class Bill_Entity {
 		super();
 	}
 
-	public Bill_Entity(Date date, float total_amount, String bill_number) {
+	public Bill_Entity(LocalDate date, float total_amount, String bill_number) {
 		super();
 		this.date = date;
 		this.total_amount = total_amount;
@@ -39,11 +39,11 @@ public class Bill_Entity {
 	}
 
 	@Column(name = "date", nullable = false)
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
