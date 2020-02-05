@@ -27,6 +27,15 @@ public class Play_Entity {
 		this.fk_combo = fk_combo;
 	}
 
+	public Play_Entity(String win_state, float base_price, int fk_player, int fk_combo, int fk_bill) {
+		super();
+		this.win_state = win_state;
+		this.base_price = base_price;
+		this.fk_player = fk_player;
+		this.fk_combo = fk_combo;
+		this.fk_bill = fk_bill;
+	}
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getPlay_id() {
