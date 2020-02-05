@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.lotery</groupId>
-	<artifactId>ms-login</artifactId>
+	<artifactId>ms-consultar-factura</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ms-login</name>
-	<description>Login Microservice</description>
+	<name>ms-consultar-factura</name>
+	<description>ConsultarFactura Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -52,6 +52,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+       			 	<testFailureIgnore>true</testFailureIgnore>
+       			 	<useSystemClassLoader>false</useSystemClassLoader>
+   				</configuration>
 			</plugin>
 		</plugins>
 	</build>

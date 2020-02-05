@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.lotery</groupId>
-	<artifactId>ms-login</artifactId>
+	<artifactId>ms-consultar-cuenta</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ms-login</name>
-	<description>Login Microservice</description>
+	<name>ms-consultar-cuenta</name>
+	<description>Signup Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>
