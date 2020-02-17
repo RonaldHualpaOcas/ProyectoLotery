@@ -7,9 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 @Entity
-@Table(name = "bill")
-public class Main_Entity {
+@Table(name = "main_play")
+public class Main_Entity extends BaseEntity{
 	private long balls_id;
 	private String default_mode;
 	private int [] generated_balls;
@@ -46,7 +48,8 @@ public class Main_Entity {
 		this.default_mode = default_mode;
 	}
 
-	@Column(name = "generated_balls", nullable = false)
+	@Type(type = "int-array")
+	@Column(name = "generated_balls", nullable = false, columnDefinition = "integer[]")
 	public int[] getGenerated_balls() {
 		return generated_balls;
 	}
