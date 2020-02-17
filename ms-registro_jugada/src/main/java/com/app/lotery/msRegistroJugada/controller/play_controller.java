@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.lotery.msRegistroJugada.exception.ResourceNotFoundException;
 import com.app.lotery.msRegistroJugada.model.Bill_Entity;
 import com.app.lotery.msRegistroJugada.model.Combo_Entity;
+import com.app.lotery.msRegistroJugada.model.Main_Entity;
 import com.app.lotery.msRegistroJugada.model.Play_Entity;
 import com.app.lotery.msRegistroJugada.repository.BillRepository;
 import com.app.lotery.msRegistroJugada.repository.ComboRepository;
+import com.app.lotery.msRegistroJugada.repository.MainRepository;
 import com.app.lotery.msRegistroJugada.repository.PlayRepository;
 
 @RestController
@@ -35,6 +37,9 @@ public class play_controller {
 	
 	@Autowired
 	private BillRepository billRepository;
+	
+	@Autowired
+	private MainRepository mainRepository;
 	
 	
 	 @GetMapping("/ShowPlays")
@@ -62,8 +67,8 @@ public class play_controller {
 			 int rand = random.nextInt();
 			 float total_amount = 0;
 			 long repo_id = 1;
-			 Play_Entity modelPlay = playRepository.findById(repo_id)
-					 .orElseThrow(() -> new ResourceNotFoundException("Player not found for this id :: " + user_id));
+			 Main_Entity modelPlay = mainRepository.findById(repo_id)
+					 .orElseThrow(() -> new ResourceNotFoundException("Resource not found for this id :: " + user_id));
 			 
 			 total_amount = playDetails.getQuantity_selected() * modelPlay.getBase_price();
 			 String bill_number = user_id.toString() + rand;
