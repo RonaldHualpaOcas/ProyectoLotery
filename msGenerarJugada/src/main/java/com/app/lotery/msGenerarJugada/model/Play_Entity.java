@@ -1,4 +1,4 @@
-package com.app.lotery.msRegistroJugada.model;
+package com.app.lotery.msGenerarJugada.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
