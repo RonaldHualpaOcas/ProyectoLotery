@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +28,7 @@ public class Play_Generator_Controller {
 	   }
 	   
 	 @GetMapping("/NewPlay")
-	 	public List<Main_Entity> generateNewPlay() throws ResourceNotFoundException {
+	 	public ResponseEntity<Main_Entity> generateNewPlay() throws ResourceNotFoundException {
 	 		
 	 	 long repo_id = 1;
 	     Main_Entity baseElement = mainRepository.findById(repo_id)
@@ -41,8 +42,11 @@ public class Play_Generator_Controller {
 			 ballsArray[i] = generatedNumber;
 		 }
 		 
+		 
 		 baseElement.setGenerated_balls(ballsArray);
-		 return mainRepository.findAll();
+		 final Main_Entity updatedMain = mainRepository.save(baseElement);
+		 
+		 return ResponseEntity.ok(updatedMain);
 		 
 	 }
 
