@@ -39,7 +39,7 @@ public class LoginControl {
 		}
 		
 		if(encontrado == true) {
-			System.out.println("User exists");			
+			System.out.println("El usuario existe");			
 		} else {
 			System.out.println("The user doesn't exist");
 		}
